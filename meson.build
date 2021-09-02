@@ -26,7 +26,7 @@ sources = ['bag_rdr.cpp']
 lib = static_library('bag_rdr', sources, cpp_args: extra_args, dependencies: deps, install: true)
 install_headers('bag_rdr.hpp')
 if not get_option('common_cxx_fetch')
-  install_subdir('deps/common_cxx', install_dir : 'include')
+  install_subdir('deps/common_cxx/common/', install_dir : 'include/common', strip_directory: true)
 endif
 
 pkg = import('pkgconfig')
